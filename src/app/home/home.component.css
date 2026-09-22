@@ -1,0 +1,111 @@
+/* Makes the Angular home component occupy the full available width. */
+:host {
+	display: block;
+}
+
+/* Defines the homepage color palette and full-page background. */
+.home-page {
+	--ink: #171616;
+	--orange: #e85d2f;
+	min-height: 100vh;
+	color: #f7f3eb;
+	background: var(--ink);
+}
+
+/* Styles the full-screen header and displays the local guitar photograph. */
+.hero {
+	min-height: 100vh;
+	position: relative;
+	background-image: linear-gradient(90deg, rgba(15, 14, 14, .72), rgba(15, 14, 14, .12)), url('../assets/cathugguitar.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+/* Controls the top navigation width, height, alignment, and divider line. */
+.navigation {
+	width: 100%;
+	height: 80px;
+  background: linear-gradient(180deg, rgba(179, 129, 129, 0), var(--ink));
+	margin: 0 auto;
+  padding: 0 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(247, 243, 235, .35);
+}
+
+/* Sets the typography shared by the brand, menu links, and bag link. */
+.brand,
+.navigation a {
+	color: inherit;
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: .1em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* Highlights the final part of the wordmark with the accent color. */
+.brand span {
+	color: var(--orange);
+}
+
+/* Places the desktop navigation links in a horizontal group. */
+.nav-links {
+	display: flex;
+	gap: 32px;
+}
+
+/* Applies the accent color when a navigation link is hovered. */
+.navigation a:hover {
+	color: var(--orange);
+}
+
+/* Aligns the hero copy and positions it below the navigation. */
+.hero-copy {
+	width: min(1180px, calc(100% - 80px));
+	margin: 0 auto;
+	padding-top: 30vh;
+}
+
+/* Styles the small uppercase label above the main heading. */
+.eyebrow {
+	color: var(--orange);
+	letter-spacing: .13em;
+	text-transform: uppercase;
+}
+
+/* Sets the large editorial heading used in the hero section. */
+h1 {
+  color: inherit;
+	font-size: 3rem;
+	font-weight: 300;
+	letter-spacing: .1em;
+}
+
+/* Styles the supporting sentence below the hero heading. */
+.hero-copy > p:last-child {
+	margin: 28px 0 0;
+	color: rgba(247, 243, 235, .82);
+	font: 1.1rem/1.5 monospace;
+}
+
+/* Adjusts navigation and hero spacing for smaller screens. */
+@media (max-width: 700px) {
+	.navigation,
+	.hero-copy {
+		width: calc(100% - 40px);
+	}
+
+	.navigation {
+		height: 72px;
+	}
+
+	.nav-links {
+		display: none;
+	}
+
+	.hero-copy {
+		padding-top: 32vh;
+	}
+}
