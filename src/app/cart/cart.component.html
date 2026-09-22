@@ -1,1 +1,52 @@
-<p>cart works!</p>
+<main class="cart-page">
+	<nav class="navigation" aria-label="Main navigation">
+		<a class="brand" routerLink="/">GUITAR<span>AWR</span></a>
+		<div class="nav-links">
+			<a class="active" routerLink="/products">Shop</a>
+			<a routerLink="/">About</a>
+			<a routerLink="/">Contact</a>
+		</div>
+		<a class="bag-link" routerLink="/cart">Bag ({{ cart.itemCount() }})</a>
+	</nav>
+
+	<section class="cart-content" aria-labelledby="cart-title">
+		<div class="cart-heading">
+			<p class="eyebrow">Your selection</p>
+			<h1 id="cart-title">Shopping bag</h1>
+		</div>
+
+		@if (cart.items().length > 0) {
+			<div class="cart-layout">
+				<div class="cart-items">
+					@for (item of cart.items(); track item.product.id) {
+						<article class="cart-item">
+							<img [src]="item.product.image" [alt]="item.product.name" />
+							<div class="item-info">
+								<p>{{ item.product.type }}</p>
+								<h2>{{ item.product.name }}</h2>
+								<div class="item-controls">
+									<button type="button" (click)="decrease(item.product.id)" aria-label="Remove one">-</button>
+									<span>Qty {{ item.quantity }}</span>
+									<button type="button" (click)="cart.add(item.product)" aria-label="Add one">+</button>
+								</div>
+							</div>
+							<strong>{{ item.product.price }}</strong>
+						</article>
+					}
+				</div>
+
+				<aside class="summary">
+					<h2>Summary</h2>
+					<div><span>Subtotal</span><strong>{{ cart.formatSubtotal() }}</strong></div>
+					<div><span>Shipping</span><span>Free</span></div>
+					<button class="checkout-button" type="button">Checkout</button>
+				</aside>
+			</div>
+		} @else {
+			<div class="empty-cart">
+				<p>Your bag is waiting for its first instrument.</p>
+				<a routerLink="/products">Continue shopping</a>
+			</div>
+		}
+	</section>
+</main>

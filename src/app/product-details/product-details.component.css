@@ -1,0 +1,523 @@
+:host {
+  display: block;
+}
+
+.product-page {
+  --ink: #171616;
+  --paper: #f3f0e9;
+  --orange: #e85d2f;
+  min-height: 100vh;
+  color: #f7f3eb;
+  background: var(--ink);
+}
+
+.navigation {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(179, 129, 129, 0), var(--ink));
+  border-bottom: 1px solid rgba(247, 243, 235, .35);
+}
+
+.navigation a,
+.back-link {
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: .1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand {
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+}
+
+.brand span,
+.eyebrow {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.navigation a:hover,
+.navigation a.active,
+.back-link:hover {
+  color: var(--orange);
+}
+
+.bag-link {
+  padding-left: 16px;
+  border-left: 1px solid rgba(247, 243, 235, .45);
+}
+
+.back-link {
+  display: block;
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 28px 0 18px;
+  font: .72rem 'Courier New', monospace;
+}
+
+.product-detail {
+  min-height: calc(100vh - 150px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
+  gap: 22px;
+  padding: 10px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.product-visual {
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: #d4d0c8;
+}
+
+.product-visual img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+.product-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 8px 10px;
+  color: var(--paper);
+  background: var(--ink);
+  font: .63rem 'Courier New', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.product-copy {
+  align-self: center;
+  padding: 40px 7vw 40px 28px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font: .72rem 'Courier New', monospace;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font: 3rem Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.description {
+  max-width: 330px;
+  margin: 26px 0 38px;
+  color: #6c6760;
+  font: 1rem/1.5 monospace;
+}
+
+.purchase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(23, 22, 22, .2);
+  border-bottom: 1px solid rgba(23, 22, 22, .2);
+}
+
+.purchase-row strong {
+  font: .8rem 'Courier New', monospace;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 10px 14px;
+  border: 0;
+  color: var(--ink);
+  background: var(--orange);
+  font: .68rem 'Courier New', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d64d22;
+}
+
+.details-list {
+  margin: 24px 0 0;
+  font: .68rem 'Courier New', monospace;
+  text-transform: uppercase;
+}
+
+.details-list div {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(23, 22, 22, .12);
+}
+
+dt,
+dd {
+  margin: 0;
+}
+
+dt {
+  color: #77716b;
+}
+
+.missing-product {
+  min-height: 100vh;
+  padding: 100px 10%;
+  color: #f3f0e9;
+  background: #171616;
+}
+
+.missing-product a {
+  color: #e85d2f;
+}
+
+@media (max-width: 700px) {
+  .navigation {
+    width: calc(100% - 40px);
+    height: 72px;
+    padding: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .back-link {
+    width: calc(100% - 40px);
+    padding: 20px 0 12px;
+  }
+
+  .product-detail {
+    min-height: 0;
+    display: block;
+    padding-top: 10px;
+  }
+
+  .product-visual {
+    min-height: 0;
+    height: min(115vw, 480px);
+  }
+
+  .product-copy {
+    padding: 42px 10px 50px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+:host {
+display: block;
+}
+
+/* Sets the catalog page palette and typography baseline. */
+.catalog-page {
+--ink: #171616;
+--paper: #f3f0e9;
+--orange: #e85d2f;
+min-height: 100vh;
+color: #f7f3eb;
+background: var(--ink);
+}
+
+/* Creates the dark editorial header for the product catalog. */
+.catalog-header {
+min-height: 80vh;
+background-image: linear-gradient(90deg, rgba(15, 14, 14, .72), rgba(15, 14, 14, .12)), url('../assets/cathugguitar.jpg');
+background-position: center;
+background-size: cover;
+}
+
+/* Aligns the catalog navigation with the homepage navigation. */
+.navigation {
+width: 100%;
+height: 80px;
+margin: 0 auto;
+padding: 0 30px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: linear-gradient(180deg, rgba(179, 129, 129, 0), var(--ink));
+border-bottom: 1px solid rgba(247, 243, 235, .35);
+}
+
+.navigation a {
+color: inherit;
+font-size: 1rem;
+font-weight: 300;
+letter-spacing: .1em;
+text-decoration: none;
+text-transform: uppercase;
+}
+
+/* Styles the Guitarawr wordmark and its accent color. */
+.brand {
+font-size: 1rem !important;
+font-weight: 300 !important;
+}
+
+.brand span,
+.eyebrow,
+em {
+color: var(--orange);
+}
+
+.nav-links {
+display: flex;
+gap: 32px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+color: var(--orange);
+}
+
+.bag-link {
+padding-left: 16px;
+border-left: 1px solid rgba(247, 243, 235, .45);
+}
+
+/* Positions the catalog title inside the image header. */
+.catalog-intro {
+width: min(1180px, calc(100% - 80px));
+margin: 0 auto;
+position: absolute;
+left: 90px;
+}
+
+.catalog-intro {
+padding-top: 20vh;
+}
+
+.eyebrow {
+letter-spacing: .13em;
+text-transform: uppercase;
+}
+
+h1 {
+margin: 0;
+color: inherit;
+font-size: 3rem;
+font-weight: 300;
+letter-spacing: .1em;
+}
+
+h3 {
+margin: 0;
+color: inherit;
+font-size: 1rem;
+font-weight: 300;
+letter-spacing: .1em;
+}
+
+em {
+font-style: italic;
+}
+
+.intro-copy {
+max-width: 280px;
+margin: 26px 0 0;
+color: rgba(247, 243, 235, .75);
+font: 1.1rem/1.5 monospace;
+}
+
+/* Provides the breathing room and controls above the product cards. */
+.catalog-content {
+padding: 10px 10px;
+color: var(--ink);
+background: #f3f0e9;
+}
+
+.catalog-toolbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-bottom: 20px;
+border-bottom: 1px solid rgba(23, 22, 22, .2);
+}
+
+.catalog-toolbar p,
+.catalog-toolbar button {
+margin: 0;
+font: .72rem 'Courier New', monospace;
+text-transform: uppercase;
+}
+
+.catalog-toolbar p span {
+margin-left: 12px;
+color: #77716b;
+}
+
+.catalog-toolbar button {
+padding: 10px 0;
+border: 0;
+color: var(--ink);
+background: none;
+cursor: pointer;
+}
+
+.catalog-toolbar button span {
+margin-left: 10px;
+color: var(--orange);
+font-size: 1rem;
+}
+
+/* Displays each guitar as a responsive product card. */
+.product-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 22px;
+padding-top: 28px;
+}
+
+.product-card {
+color: inherit;
+text-decoration: none;
+}
+
+.product-image {
+height: 420px;
+position: relative;
+overflow: hidden;
+background: #d4d0c8;
+}
+
+.product-image img {
+width: 100%;
+height: 100%;
+display: block;
+object-fit: cover;
+transition: transform .45s ease;
+}
+
+.product-card:hover img {
+transform: scale(1.04);
+}
+
+.product-label,
+.view-product {
+position: absolute;
+z-index: 1;
+font: .63rem 'Courier New', monospace;
+letter-spacing: .08em;
+text-transform: uppercase;
+}
+
+.product-label {
+top: 14px;
+left: 14px;
+padding: 8px 10px;
+color: var(--paper);
+background: var(--ink);
+}
+
+.view-product {
+right: 15px;
+bottom: 15px;
+padding: 8px 10px;
+color: var(--ink);
+background: var(--orange);
+opacity: 0;
+transform: translateY(8px);
+transition: opacity .25s ease, transform .25s ease;
+}
+
+.product-card:hover .view-product,
+.product-card:focus-visible .view-product {
+opacity: 1;
+transform: translateY(0);
+}
+
+.product-info {
+display: flex;
+align-items: start;
+justify-content: space-between;
+gap: 12px;
+padding-top: 16px;
+}
+
+.product-info h2 {
+margin: 0 0 6px;
+font: 1.3rem Georgia, serif;
+}
+
+.product-info p,
+.product-info strong {
+margin: 0;
+color: #6c6760;
+font: .68rem 'Courier New', monospace;
+text-transform: uppercase;
+}
+
+.product-info strong {
+color: var(--ink);
+white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+.navigation,
+.catalog-intro,
+.catalog-content {
+  width: calc(100% - 40px);
+}
+
+.navigation {
+  height: 72px;
+}
+
+.nav-links {
+  display: none;
+}
+
+.navigation {
+  width: calc(100% - 40px);
+  height: 72px;
+  padding: 0;
+}
+
+.catalog-intro {
+  width: calc(100% - 40px);
+  padding-top: 32vh;
+}
+
+.catalog-content {
+  padding-top: 55px;
+}
+
+.product-grid {
+  grid-template-columns: 1fr;
+}
+
+.product-image {
+  height: min(115vw, 480px);
+}
+
+.back-link {
+  padding: 10px 5px;
+  background-color: #171616;
+}
+}

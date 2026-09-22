@@ -1,1 +1,42 @@
-<p>product-details works!</p>
+@if (product; as guitar) {
+	<main class="product-page">
+		<nav class="navigation" aria-label="Main navigation">
+			<a class="brand" routerLink="/">GUITAR<span>AWR</span></a>
+			<div class="nav-links">
+				<a routerLink="/products">Shop</a>
+				<a routerLink="/">About</a>
+				<a routerLink="/">Contact</a>
+			</div>
+			<a class="bag-link" routerLink="/cart">Bag ({{ cart.itemCount() }})</a>
+		</nav>
+
+		<a class="back-link" routerLink="/products">&#8592; Back to collection</a>
+
+		<section class="product-detail">
+			<div class="product-visual">
+				<span class="product-label">{{ guitar.label }}</span>
+				<img [src]="guitar.image" [alt]="guitar.name" />
+			</div>
+
+			<div class="product-copy">
+				<p class="eyebrow">{{ guitar.type }}</p>
+				<h1>{{ guitar.name }}</h1>
+				<p class="description">{{ guitar.description }}</p>
+				<div class="purchase-row">
+					<strong>{{ guitar.price }}</strong>
+					<button type="button" (click)="addToCart()">Add to bag</button>
+				</div>
+				<dl class="details-list">
+					<div><dt>Availability</dt><dd>Ready to ship</dd></div>
+					<div><dt>Instrument</dt><dd>Electric guitar</dd></div>
+					<div><dt>Shipping</dt><dd>Free delivery</dd></div>
+				</dl>
+			</div>
+		</section>
+	</main>
+} @else {
+	<main class="missing-product">
+		<h1>Product not found</h1>
+		<a routerLink="/products">Return to collection</a>
+	</main>
+}

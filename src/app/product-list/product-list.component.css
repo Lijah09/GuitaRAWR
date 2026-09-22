@@ -182,10 +182,6 @@ em {
 	transition: transform .45s ease;
 }
 
-.product-card:hover img {
-	transform: scale(1.04);
-}
-
 .product-label,
 .view-product {
 	position: absolute;
